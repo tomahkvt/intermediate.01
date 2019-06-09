@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASE: testdb
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_ROOT_HOST: '%'
+    ports:
+    - "3306:3306"
+
+  rabbitmq:
+    container_name: "rabbitmq"
+    image: "rabbitmq:3-management"
+    hostname: "rabbitmq"
+    ports:
+    - "15672:15672"
+    - "5672:5672"
+
